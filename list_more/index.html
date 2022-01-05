@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>더보기버튼 구현</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/more.js"></script>
+    <!-- <script>
+    $(window).on('load',function(){
+        load('#js-load','4');
+        $('#js-btn-wrap .button').on('click',function(){
+            load('#js-load','4','#js-btn-wrap');
+        });
+    });
+    function load(id, cnt, btn){
+        // var list_li = $('.lists li');
+        var girls_list = id + '.lists li:not(.active)';
+        console.log(girls_list);
+        var girls_length = $(girls_list).length;
+        // console.log(girls_length);
+        var girls_total_cnt;
+        // console.log(girls_total_cnt)
+        if(cnt<girls_length){
+            girls_total_cnt = cnt;
+        }else{
+            girls_total_cnt = girls_length;
+            $('.button').hide();
+        }
+        $(girls_list + ':lt('+ girls_total_cnt +')').addClass('active');
+    } -->
+    </script>
+</head>
+<body>
+    <div id="contents">
+        <div id="js-load" class="main">
+          <ul class="lists">
+            <li>test1</li>
+            <li>test2</li>
+            <li>test3</li>
+            <li>test4</li>
+            <li>test5</li>
+            <li>test6</li>
+            <li>test7</li>
+            <li>test8</li>
+            <li>test9</li>
+            <li>test10</li>
+            <li>test11</li>
+            <li>test12</li>
+            <li>test13</li>
+            <li>test14</li>
+            <li>test15</li>
+            <li>test16</li>
+            <li>test17</li>
+            <li>test18</li>
+            <li>test19</li>
+            <li>test20</li>
+          </ul>
+          <div id="js-btn-wrap" class="btn-wrap">
+              <a href="javascript:;" class="button">더보기</a>
+            </div>
+</body>
+</html>

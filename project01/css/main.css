@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.content .main_video{
+    margin-bottom: -4px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.content .main_video video{
+    /* position: fixed; */
+    /* background-size: cover; */
+    width: 100%;
+    overflow:hidden;
+    min-width: 900px;
+}

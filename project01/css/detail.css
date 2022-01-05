@@ -1,0 +1,221 @@
+@charset "UTF-8";
+img{
+    max-width: 100%; vertical-align: middle;
+    display: block;
+}
+
+.bodywrap{position: relative;}
+.detailPage{
+    display: flex;
+    font-size: 13px; color: #333;
+    margin-bottom: 100px;
+}
+.detailPage .img-box{width:50%;}
+.detailPage .detail-imgs{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0 0 20px;
+    width: calc(100% - 500px);
+    height: fit-content;
+}
+.detailPage .detail-imgs div{
+    width: calc(50% - 10px);
+    justify-content: center;
+    margin: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    height:fit-content;
+}
+.detailPage .detail-info{
+    width: 500px;
+    margin-top: 120px;
+    padding: 0 100px 0 80px;
+    box-sizing: border-box;
+}
+.detail-info .pd-info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.detail-info .pd-info h3{font-size: 21px;}
+.detail-info .pd-info p{font-size: 16px;}
+.detail-info .pd-color{
+    display: flex;
+    margin-bottom: 50px;
+}
+.detail-info .pd-color .color-imgbox{
+    width: calc(25%);
+    margin: 3px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+.detail-info .pd-color .color-imgbox:hover{
+    border: 1px solid #333;
+}
+.detail-info .pd-color .color-imgbox.active{
+    border: 1px solid #333;
+}
+.detail-info .pd-color .color-imgbox>a{
+    padding: 100% 100% 0 0;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+.detail-info .pd-color .color-imgbox:nth-child(1)>a{
+    background-image: url(../img/sunglass/detail/product01.jpg);
+}
+.detail-info .pd-color .color-imgbox:nth-child(2)>a{
+    background-image: url(../img/sunglass/detail/product02.jpg);
+}
+.detail-info .pd-color .color-imgbox:nth-child(3)>a{
+    background-image: url(../img/sunglass/detail/product03.jpg);
+}
+.detail-info .pd-color .color-imgbox:nth-child(4)>a{
+    background-image: url(../img/sunglass/detail/product04.jpg);
+}
+
+.detail-info .desc {
+    margin-bottom: 50px;
+}
+.detail-info .btns>div{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50px;
+    border: 1px solid #333;
+    text-align: center;
+    font-weight: bold;
+}
+.detail-info .btns>.add_cart{
+    background: #333;
+    color: #fff;
+    margin-bottom: 10px
+}
+.detail-info .btns{
+    margin-bottom: 30px;
+}
+.detail-info .notice{
+    margin-bottom: 50px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+.detail-info .notice p{
+    margin-bottom: 30px;
+}
+.detail-info .notice p:nth-child(2),.detail-info .notice p:nth-child(3){
+    color: #cb8c6c;
+}
+/* 상세메뉴슬라이드메뉴 */
+.detail-info .info-menu .menu-box{
+    border-top: 1px solid #ccc;
+    letter-spacing: -1px;
+    word-break: keep-all;
+    font-size: 14px;
+}
+.detail-info .info-menu .menu-box:last-child{
+    border-bottom: 1px solid #ccc;
+}
+.detail-info .menu-box>p{
+    height: 60px; line-height: 60px;
+    padding: 0 10px;
+}
+.detail-info .menu-box p>span{
+    float: right;
+}
+.detail-info .menu-box p>span::after{
+    clear: both;
+    content: '';
+    display: block;
+}
+.detail-info .menu-box p i{
+    transition: all 0.5s;
+    transform: rotate(0deg);
+}
+.detail-info .menu-box.active p i{
+    transform: rotate(180deg);
+}
+.detail-info .menu-box>ul{
+    padding: 10px 10px 20px 10px;
+    display: none;
+}
+.detail-info .menu-box>ul.active{display: block;}
+.detail-info .menu-box>ul>li{
+    line-height: 26px;
+}
+.detail-info .menu-box>ul>li::before{
+    content: '•';
+    margin-right: 10px;
+}
+.detail-info .menu-box>ul>li.p::before{
+    content: none;
+}
+
+.MO_imgslide{display: none;}
+
+
+/* 태블릿 3줄*/
+@media screen and (max-width: 1024px) {
+    .detailPage{
+        justify-content: space-between;
+    }
+    .detailPage .detail-imgs{
+        width: calc(100% - 400px);
+    }
+    .detailPage .detail-imgs div{
+        width: calc(100% - 10px);
+    }
+    .detailPage .detail-info{
+        width: 400px;
+        padding: 0 40px;
+    }
+}
+
+/* 스마트폰 2줄*/
+@media screen and (max-width: 768px) {
+    .detailPage{
+        display: block;
+    }
+    /* .detailPage .detail-imgs{
+        width: 100%;
+        margin: 0;
+    } */
+    /* .detailPage .detail-imgs div{
+        width: 100%;
+        margin: 0;
+    } */
+    .detailPage .detail-info{
+        width: 100%;
+        padding: 0 15px;
+        margin-top: 50px;
+    }
+
+    /* MO_이미지슬라이드 */
+    .pc_detail-imgs{display: none !important;}
+    .MO_imgslide{display: block;}
+    .MO_imgslide>.MO_detail-imgs{
+        width: 100%;
+        margin: 0;
+        flex-wrap: nowrap;
+    }
+    .MO_imgslide>.MO_detail-imgs>div{
+        margin: 0px;
+    }
+    /* 끝 */
+
+    .detail-info .pd-info{
+        padding: 0 10px;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .tab_manu>ul{
+        justify-content: left;
+    }
+}
