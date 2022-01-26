@@ -51,7 +51,7 @@ video {width: 100%;}
 }
 
 /* content영역 */
-.content{display: none;}
+.content{display: none; overflow-x: hidden;}
 .content.active{display: block;}
 .content>.tab1{
     width: 100%;

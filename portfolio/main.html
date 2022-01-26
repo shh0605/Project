@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+    <script src="js/scrolloverflow.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/percent_circle.css">
+    <link rel="stylesheet" href="css/wave.css">
+    <!-- <link rel="stylesheet" href="css/particles.css"> -->
+    <title>PORTFOLIO(손정빈)</title>
+</head>
+
+<body>
+    <!-----------------로딩페이지 ----------------- -->
+    <div class="loading_wrap">
+
+        <div class="rect rect1"></div>
+        <div class="rect rect2"></div>
+        <div class="rect rect3"></div>
+        <div class="rect rect4"></div>
+        <p class="loading_text">※ 이 페이지는 크롬에 최적화 되어있는 페이지입니다.</p>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".loading_wrap").delay(2000).fadeOut();
+            $(".introbox > div").delay(1800).css("display", "block");
+        });
+    </script>
+
+    <!-----------------로딩페이지----------------- -->
+    
+    <div id="slide_menu">
+        <ul>
+            <li class="section1" data-anchor="Home"><a href="#Home">Home</a></li>
+            <li class="section2" data-anchor="Profile"><a href="#Profile">Profile</a></li>
+            <li class="section3" data-anchor="About"><a href="#About">About</a></li>
+            <li class="section4" data-anchor="Skill"><a href="#Skill">Skill</a></li>
+            <li class="section5" data-anchor="Work"><a href="#Work">Work</a></li>
+            <li class="section6" data-anchor="Contact"><a href="#Contact">Contact</a></li>
+        </ul>
+        <p> ※ 이 페이지는 크롬 브라우저에 최적화 되어있는 페이지 입니다.</p>
+    </div>
+    <div id="slide_menu_bg"></div>
+    <header>
+        <ul>
+            <li class="section1" data-anchor="Home"><a href="#Home">Home</a></li>
+            <li class="section2" data-anchor="Profile"><a href="#Profile">Profile</a></li>
+            <li class="section3" data-anchor="About"><a href="#About">About</a></li>
+            <li class="section4" data-anchor="Skill"><a href="#Skill">Skill</a></li>
+            <li class="section5" data-anchor="Work"><a href="#Work">Work</a></li>
+            <li class="section6" data-anchor="Contact"><a href="#Contact">Contact</a></li>
+            <div class="menu_btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </ul>
+    </header>
+    <script>
+        //슬라이드 메뉴 스크립트
+        $("#slide_menu_bg").click(function () {
+            $(this).css("display", "none");
+            $("#slide_menu").css("right", "-100%");
+        });
+
+        $(".menu_btn i").click(function () {
+            $("#slide_menu_bg").css("display", "block");
+            $("#slide_menu").css("right", "0");
+        });
+    </script>
+    <div id="fullpage">
+        <section class="section">
+            <!-- <div id="particles-js"></div> -->
+            <div class="cloudbox">
+                <div class="introbox">
+                    <h2 id="main_text">WELCOME! :)</h2>
+                    <!-- <div class="text-effect">반갑습니다! 신입 웹퍼블리셔 손정빈입니다. 천천히 둘러봐 주시면 감사하겠습니다.</div> -->
+                    <div class="text-effect">반갑습니다! 신입 웹퍼블리셔 손정빈입니다.</div>
+                </div>
+                <img src="img/cloud/cloud1.png" style="--i:1;" alt="구름1">
+                <img src="img/cloud/cloud2.png" style="--i:2;" alt="구름2">
+                <!-- <img src="img/cloud/cloud3.png" style="--i:3;" alt="구름3"> -->
+                <!-- <img src="img/cloud/cloud4.png" style="--i:4;" alt="구름4"> -->
+            </div>
+            <script>
+                //텍스트 효과
+                var app = document.getElementById('main_text');
+                var $r1_text = $("#main_text").text();
+
+                var typewriter = new Typewriter(app, {
+                    loop: true
+                });
+
+                typewriter.typeString($r1_text)
+                    .pauseFor(2500)
+                    .deleteAll()
+                    .start();
+            </script>
+            <!-- <script src="js/particles.js"></script> -->
+            <!-- <script src="js/app.js"></script> -->
+            <script src="js/intro_text_effect.js"></script>
+        </section>
+        <section class="section profile">
+            <div class="produce row">
+                <div class="produce-left col-5">
+                    <img src="img/me_1.jpg" alt="내사진">
+                </div>
+                <div class="produce-right col-7 last">
+                    <h2 class="tit2">Hello!</h2>
+                    <p>
+                        안녕하세요. 신입 웹퍼블리셔 <span class="bold">손정빈</span>입니다.<br>
+                        저는 생각한것을 만들어가는 과정이 좋습니다.<br>
+                        웹을 제작하는 일은 시간이 지날수록 트렌드는 변하고 계속 새로운 기술이 나오면서
+                        항상 멈추지 않고 끈임없이 배울려는 마음가짐으로 배워가며 작업을 해야합니다.<br>
+                        하지만 제작 과정 끝에 사용자에 편의를 위한다는 본질은 변하지 않는다고 생각합니다.<br>
+                        <span class="bold"> 본질을 이해하고 직관적으로 메시지를 전달할 수 있는 퍼블리셔</span>가 되고 싶습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="section about_wrap">
+            <h2 class='tit'>about</h2>
+            <div class="row about" id="about">
+                <div class="col-4">
+                    <img src="img/about1.png">
+                    <div class="about_box">
+                        <h2>Intro</h2>
+                        <ul>
+                            <li>이름 : 손정빈 (Son JeongBeen)</li>
+                            <li>생년월일 : 1999.06.05</li>
+                            <li>tel : 010-3605-3539</li>
+                            <li>Email : jeongbeen65@naver.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="img/about3.png">
+                    <div class="about_box">
+                        <h2>License</h2>
+                        <ul>
+                            <li>1. 웹디자인 기능사</li>
+                            <li>2. GTQ 1급</li>
+                            <li>3. ITQ (Excel,PowerPoint,한글)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 last padding20">
+                    <img src="img/about2.png">
+                    <div class="about_box">
+                        <h2>grade</h2>
+                        <ul style="padding: 5px;">
+                            <li>2021.11 NCS UI/UX 웹 퍼블리셔 교육 수료</li>
+                            <li>2020.02 안산대학교 it응용보안학과 졸업</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <script>
+                    //scroll 시 fadein
+                    var barThis = $(".about_wrap").offset();</script>
+            </div>
+        </section>
+        <section class="section page">
+            <div class="row skill">
+                <div class="col-12 last">
+                    <h2 class="tit">Skill</h2>
+                    <div class="flex-wrapper" id="margin20">
+                        <div class="single-chart">
+                            <svg viewBox="0 0 36 36" class="circular-chart orange">
+                                <path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="95, 100" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">HTML</text>
+                            </svg>
+                            <p class="circle_percent">95%</p>
+                        </div>
+
+                        <div class="single-chart">
+                            <svg viewBox="0 0 36 36" class="circular-chart green">
+                                <path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">CSS</text>
+                            </svg>
+                            <p class="circle_percent">90%</p>
+                        </div>
+
+                        <div class="single-chart">
+                            <svg viewBox="0 0 36 36" class="circular-chart blue">
+                                <path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">JQUERY</text>
+                            </svg>
+                            <p class="circle_percent">85%</p>
+                        </div>
+                    </div>
+
+                    <div class="flex-wrapper">
+                        <div class="single-chart">
+                            <svg viewBox="0 0 36 36" class="circular-chart yellow">
+                                <path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">Photoshop & Illustrator</text>
+                            </svg>
+                            <p class="circle_percent">90%</p>
+                        </div>
+                        <div class="single-chart">
+                            <svg viewBox="0 0 36 36" class="circular-chart red">
+                                <path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="65, 100" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">Git</text>
+                            </svg>
+                            <p class="circle_percent">65%</p>
+                        </div>
+                        <div class="single-chart">
+                            <svg viewBox="0 0 36 36" class="circular-chart purple">
+                                <path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">OA</text>
+                            </svg>
+                            <p class="circle_percent">90%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="section">
+            <div class="produce row">
+                <div class="produce-left col-5">
+                    <img src="img/me_.png" alt="내사진">
+                </div>
+                <div class="produce-right col-7 last">
+                    <h2 class="tit2">Hello!</h2>
+                    <p>
+                        안녕하세요 <span class="bold">손정빈</span>이라고 합니다.<br>
+                        저는 생각한것을 만들어가는 과정이 좋습니다.<br>
+                        웹을 제작하는 일은 시간이 지날수록 트렌드는 변하고 계속 새로운 기술이 나오면서
+                        항상 멈추지 않고 끈임없이 배울려는 마음가짐으로 배워가며 작업을 해야합니다.<br>
+                        하지만 제작 과정 끝에 사용자에 편의를 위한다는 본질은 변하지 않는다고 생각합니다.<br>
+                        <span class="bold"> 본질을 이해하고 직관적으로 메시지를 전달할 수 있는 퍼블리셔</span>가 되고 싶습니다.
+                    </p>
+                </div>
+            </div>
+        </section> -->
+
+
+
+        <!-- -----------------------SWIPER----------------------->
+
+        <section class="section work">
+            <!-- Swiper -->
+            <h2 class="tit">Work</h2>
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <!-- <img src="img/project3-intro.jpg" /> -->
+                            <div class="img">
+                                <img src="img/project01.jpg" />
+                            </div>
+                            <div class="detail">
+                                <p><span class="bold">프로젝트명</span> : 투썸플레이스</p>
+                                <p><span class="bold">사용언어</span> : HTML,CSS,JS</p>
+                                <p>
+                                    <span class='bold'>(Single Page)</span><br>
+                                    퍼블리싱 100% <br>
+                                    반응형으로 제작하였습니다.
+                                </p>
+                                <div class="detail_btn">
+                                    <div><a href="http://shh0605.dothome.co.kr/project/project02/index.html"
+                                            target="_blank"><span>사이트로 이동</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img">
+                                <img src="img/project02.jpg" />
+                            </div>
+                            
+                            <div class="detail">
+                                <p><span class="bold">프로젝트명</span> : 젠틀몬스터</p>
+                                <p><span class="bold">사용언어</span> : HTML,CSS,JS</p>
+                                <p>
+                                    <span class='bold'>(full Page)</span><br>
+                                    퍼블리싱 100%<br>
+                                    메인페이지, 선글라스, 상세페이지, 매장보기, 로그인페이지
+                                    를 반응형으로 제작하였습니다.
+                                </p>
+                                <div class="detail_btn">
+                                    <div><a href="http://shh0605.dothome.co.kr/project/project01/index.html"
+                                            target="_blank"><span>사이트로 이동</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+
+                <!-- detail modal JS -->
+                <script>
+                    var modal_start_btn = $(".detail_btn1")
+                    var modal_bg = $(".detail_modal_bg");
+                    modal_start_btn.click(function (e) {
+                        e.preventDefault();
+                        var $this_data = $(this).attr("data");
+                        $(".modal_wrap").css("display", "block");
+
+                        console.log($this_data);
+                        if ($this_data == "d1") {
+                            $(".d1").css("display", "block");
+                        }
+                        if ($this_data === "d2") {
+                            $(".d2").css("display", "block");
+                        }
+
+                        if ($this_data === "d3") {
+                            $(".d3").css("display", "block");
+                        }
+                    });
+
+                    modal_bg.click(function () {
+                        $(".d1").css("display", "none");
+                        $(".d2").css("display", "none");
+                        $(".d3").css("display", "none")
+                        $(".modal_wrap").css("display", "none");
+                    });
+
+                    //------- img src , a href 스크립트 제어  ---------
+
+
+                    //------------img src , a href 스크립트 제어 end -----------
+                </script>
+            </div>
+            <!-- Swiper JS -->
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                    effect: "flip",
+                    grabCursor: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                });
+            </script>
+        </section>
+        <!-- -----------------------SWIPER END----------------------->
+        <section class="section" style="position: relative;">
+            <h2 class="tit">Conctact</h2>
+            <div class="contact row">
+                <div class="contact-left col-6">
+                    <h2>Epilogue</h2>
+                    <p>
+                        끝까지 봐주셔서 감사합니다.<br>
+                        작업을 할수록, 이해할수록 계속 궁금한 것들이 생겨났습니다.<br>
+                        넓은 곳에서, 많은 사람들과 어우러져 일하는 법을 배우고 싶습니다.<br>
+                    </p>
+                </div>
+                <div class="contact-right col-6 last">
+                    <div>
+                        <i class="fas fa-phone-alt"></i>
+                        <p><span>TEL </span>: 010-3605-3539</p>
+                    </div>
+                    <div>
+                        <i class="far fa-envelope"></i>
+                        <p><span>E-MAIL </span>: jeongbeen65@naver.com</p>
+                    </div>
+                    <div>
+                        <i class="fab fa-github"></i>
+                        <p><span>Git </span>: jeongbeen65@naver.com</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ocean">
+                <div class="wave"></div>
+                <!-- <div class="wave"></div> -->
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        $(function () {
+            $('#fullpage').fullpage({
+                autoScrolling: true,
+                anchors: ['Home', 'Profile','About', 'Skill', 'Work', 'Contact'],
+                sectionsColor: ['red', 'white', 'white', 'white', 'white'],
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['Home', 'Profile','About', 'Skill', 'Work', 'Contact'],
+                scrollOverflow: true,
+                afterLoad: function (anchorLink, index) {
+                    //Home
+                    if (index == 1) {
+                        //setTimeout(effect(effect_box, 50), 5000);
+                        setTimeout(() => {
+                            effect(effect_box, 50)
+                        }, 2300);
+                    }
+                    //about
+                    if (index == 3) {
+
+                        //moving the image
+                        $('.about ul').animate({
+                            top: 0, opacity: 1
+                        }, 400);
+
+                        // $('#section1').find('p').first().fadeIn(1800, function () {
+                        //     $('#section1').find('p').last().fadeIn(1800);
+                        // });;
+
+                    }
+
+                    //skill
+                    if (index == 4) {
+                        $(".circle").addClass("circle_animation");
+                    }
+
+                    // Hello
+                    if (index == 2) {
+                        $(".tit2").addClass('jelly');
+                        $(".produce-left > img").addClass('jelly');
+
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

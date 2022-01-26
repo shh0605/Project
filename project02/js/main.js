@@ -2,84 +2,37 @@ $(function(){
 
     // *----- 함수정의 -----*
 
-    function setting(){
-        var wd = $(window).width();
-        // if(wd > 768){
-            // height값 window창 사이즈로 변경 함수
-            function HeightResize(){
-                var ht = $(window).height();
-                // console.log(ht);
-            
-                $('.bodywrap>.mySwiper').height('100vh');
-                $('.bodywrap .section-wrap').height(ht);
-                $('.bodywrap section').parent().height(ht);
-                $('.section1-slide .img-wrap a').height(ht);
-                $('section>div').height(ht);
-                // $('#main_footer').height('506px');
-            }
-            // 0.1초 지나고 창크기 변경 함수
-            // function setTime(){
-            //     setTimeout(function(){
-            //         HeightResize();
-            //     },100);
-            // }
+    // height값 window창 사이즈로 변경 함수
+    function HeightResize(){
+        var ht = $(window).height();
     
-            // *----- 함수호출 -----*
-            HeightResize();
-            // setTime();
-    
-            // 창 리사이즈시
-            $(window).on('resize',function(){
-                HeightResize();
-                // setTime();
-            });
-            // 스크롤시
-            $(window).on('scroll',function(){
-                HeightResize();
-                // setTime();
-                // MainSlideCount();
-            });
-    
-        // }if(wd <= 768){
-            // function MoResize(){
-            //     $('.bodywrap>.mySwiper').removeAttr('style');
-            //     $('.bodywrap .section-wrap').removeAttr('style');
-            // }
-            // MoResize();
-
-            // $('.bodywrap>.mySwiper').off('wheel',handleEvent(e));
-            // $('.bodywrap>.mySwiper').on('wheel', function(e){
-            //     console.log('whell');
-            //     // event.preventDefault();
-            //     return false
-            //     // $('.bodywrap>.mySwiper').off('wheel',handleEvent(e))
-            // });
-
-
-
-            // setTime();
-
-            // // 0.1초 지나고 창크기 변경 함수
-            // function setTime(){
-            //     setTimeout(function(){
-            //         MoResize();
-            //     },100);
-            // }
-
-            // $(window).on('resize',function(){
-            //     MoResize();
-            //     setTime()
-            // });
-            // $(window).on('scroll',function(){
-            //     MoResize();
-            //     setTime()
-            // });
-        // }
+        $('.bodywrap>.mySwiper').height('100vh');
+        $('.bodywrap .section-wrap').height(ht);
+        $('.bodywrap section').parent().height(ht);
+        $('.section1-slide .img-wrap a').height(ht);
+        $('section>div').height(ht);
     }
-    setting();
+    // 0.1초 지나고 창크기 변경 함수
+    // function setTime(){
+    //     setTimeout(function(){
+    //         HeightResize();
+    //     },100);
+    // }
 
+    // *----- 함수호출 -----*
+    HeightResize();
+    // setTime();
+
+    // 창 리사이즈시
     $(window).on('resize',function(){
-        setting();
+        HeightResize();
+        // setTime();
+    });
+    // 스크롤시
+    $(window).on('scroll',function(){
+        HeightResize();
+        // setTime();
+        // MainSlideCount();
     });
     
     var secWrap = $('.mySwiper.first>.section-wrap');
@@ -117,6 +70,33 @@ $(function(){
     txtChange();
 
 
+    // BRAND SUPPORT
+    $(window).resize(function(){
+        setTimeout(function(){
+            brandBtn();
+        },100);
+    });
+    // btn-wrap의 top값 수정
+    function brandBtn(){
+        var wd = $(window).width();
+        if(wd <= 768){
+            var brand_img = $('.brand .content .con-box>.con_left>img');
+            var imgHt = brand_img.height();
+            // console.log(imgHt);
+            var dd = imgHt - 50;
+            // console.log(dd);
+    
+            $('.brand .btn-wrap').css({
+                'top': dd
+            });
+        }if(wd > 768){
+            $('.brand .content .con-box>.con_left>img').removeAttr("style");
+        }
+    }
+    brandBtn();
+    
+
+    
     // FRANCHISE
     // var aniboxWidth = $('.franchise .aniwrap .itembox').width();
     // console.log(aniboxWidth);
@@ -159,5 +139,94 @@ $(function(){
             'transform': 'translateX(-100%)'
         });
     });
+
+
+
+    // var Tx, Tleft, Tdown;
+
+    // // ** 터치 이벤트 **
+    // $(".bodywrap").on('touchstart', function(e){   // 손가락이 닿은 상태
+    //     // e.preventDefault();   // a링크 넘어가는거 막기
+    //     Tdown = true;
+    //     // Tx = e.touches[0].pageX;  // 터치한 X축 좌표
+    //     Tx = e.touches[0].pageY;  // 터치한 X축 좌표
+    //     // Tleft = $(".tab_manu").scrollLeft();
+    //     Tleft = $(".bodywrap").scrollTop();
+    // });
+
+    // $("body").on('touchmove', function(e){  //  손가락이 움직이는지 확인
+    //     if(Tdown){
+    //     // var newTX = e.pageX;
+    //     // left = $(this).scrollLeft();
+    //     // var newTX = e.touches[0].pageX;
+    //     var newTX = e.touches[0].pageY;
+    //     // $(".tab_manu").scrollLeft(Tleft - newTX + Tx);
+    //     $(".bodywrap").scrollTop(Tleft - newTX + Tx);
+    //     }
+    // });
+
+    // $("body").on('touchend', function(e){
+    //     Tdown = false;
+    // });
+
+    // if($('.mySwiper').scrollTop()){
+    //     $('header').addClass('active');
+    // }else{
+    //     $('header').removeClass('active');
+    // }
+    // console.log( $('.section-wrap').scrollTop() )
     
 });
+
+$(window).on('load',function(){
+    function isMobile() {return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);}
+
+    if(isMobile() == true){
+        $(window).resize(function(){
+            moDevice_touchSlide()
+        });
+
+        function moDevice_touchSlide(){
+            function HT768(){
+                var Tx, Tleft, Tdown;
+    
+                // ** 터치 이벤트 **
+                $(".mySwiper").on('touchstart', function(e){   // 손가락이 닿은 상태
+                    Tdown = true;
+                    Tx = e.touches[0].pageY;  // 터치한 Y축 좌표
+                    Tleft = $(".mySwiper").scrollTop();
+                    console.log('touchstart');
+                });
+            
+                $("body").on('touchmove', function(e){  //  손가락이 움직이는지 확인
+                    if(Tdown){
+                    var newTX = e.touches[0].pageY;
+                    $(".mySwiper").scrollTop(Tleft - newTX + Tx);
+                    console.log($(".mySwiper").scrollTop());
+            
+                    if($('.mySwiper').scrollTop()){
+                        $('header').addClass('active');
+                    }else{
+                        $('header').removeClass('active');
+                    }
+                    
+                    }
+                });
+            
+                $("body").on('touchend', function(e){
+                    Tdown = false;
+                });
+            }
+
+            if( $(window).width() <= 768 ){
+                HT768();
+            }else{
+                function HT768(){ return false;}
+            }
+        }
+        moDevice_touchSlide();
+    }
+    
+    
+});
+

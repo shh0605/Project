@@ -1,0 +1,568 @@
+#slide_menu{
+    position: fixed;
+    height:100%;
+    width:40%;
+    min-width:250px;
+    z-index: 100;
+    background: #f7f7f7;
+    right:-100%;
+    transition: all 1s;
+    padding:15% 5%;
+} 
+#slide_menu > ul {padding:0;}
+#slide_menu > ul > li {
+    border-bottom:1px dotted #999999;
+    height:50px;
+    line-height:50px;
+}
+#slide_menu > ul > li > a{
+    font-size:24px;
+    color:#393939;
+
+}
+#slide_menu > p {font-size: 10px;margin-top: 10%;}
+#slide_menu_bg{
+    position: fixed;
+    height:100%;
+    width:100%;
+    background: rgba(0,0,0, 0.5);
+    z-index: 99;
+    display:none;
+} 
+
+header{overflow:hidden;position:relative;}
+header > ul{
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0, 0.5);
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+header > ul > li{margin:0 20px; z-index: 100;}
+header > ul > li > a{color:white;}
+.menu_btn > i { 
+    color:white;
+    font-size:25px;
+    position:absolute;
+    right:3%;
+}
+.menu_btn{
+    display:none;
+}
+section{position:relative;}
+#fullpage > section:nth-child(1){background: url(../img/sky.jpg) 0% 0% / cover !important;}
+/* #fullpage > section:nth-child(1){background: url(../img/sky_bg5.jpg) 0% 10% / cover !important;} */
+#fullpage > section:nth-child(2){background: url(../img/section_bg2.jpg) 0% 0% / cover !important; margin-top: 10px; box-sizing: border-box;}
+/* #fullpage > section:nth-child(3){background: url(../img/section_bg3.jpg) 0% 0% / cover !important;}
+#fullpage > section:nth-child(4){background: url(../img/section_bg4.jpg) 0% 0% / cover !important;} */
+
+#fullpage > section:nth-child(1) .fp-tableCell{padding: 0;}
+
+.introbox{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    color: white;
+    z-index: 999;
+}
+.introbox > h2{
+    font-size:50px;
+    color:inherit;
+    text-align: center;
+    text-shadow: 3px 3px 3px #393939;
+    margin: 0 0 20px;
+}
+.introbox > div{    
+    display:none;
+    width: 100%;
+    /* max-width: 455px; */
+    margin: 0 auto;
+    font-size:22px;
+    color:inherit;
+    text-shadow: 1.5px 1.5px 2px #393939;
+    /* line-height:150%; */
+    letter-spacing: 1px;
+}
+.introbox > div > p{
+    /* font-size:22px; */
+    color:inherit;
+    /* text-shadow: 1px 1px 3px #393939; */
+    display: inline-block;
+    letter-spacing: 3px;
+    margin: 0;
+    opacity: 0;
+    transition: 0.8s all;
+}
+.introbox > div > p.mr5{
+    margin-right: 5px;
+}
+/* --------------구름-------------------------- */
+.cloudbox{
+    position:relative; height:100%;
+    backdrop-filter: blur(1.5px); background-color: rgba(255,255,255,15%);
+}
+.cloudbox > img{
+    position: absolute;
+    bottom:0;
+    max-width: 100%;
+    opacity: 0.6;
+    animation: cloud calc(20s * var(--i)) linear infinite;
+}
+.cloudbox > img:nth-child(1){
+    opacity: 0.5;
+}
+@keyframes cloud{
+    0%{
+        transform:translateX(-100%);
+    }
+    100%{
+        transform:translateX(100%);
+    }
+}
+/* --------------구름 end-------------------------- */
+/* ----------------공용-------------------------- */
+.tit{text-align:center;font-size:32px;}
+.bold{font-weight:bold;}
+.detail p{
+    line-height: 170%;
+}
+/* --------------공용  end-------------------------- */
+.seciton_inner{
+    height:100%;
+    text-align:center;
+    position:relative;
+}
+/*  ---------------about--------------------- */
+.about{
+    margin-top:40px !important;
+}
+#about{
+    overflow:visible;
+}
+.about > div{ 
+    text-align: center;
+    box-shadow: 0 5px 9px 0px #dbdbdb;
+    padding: 5% 0;
+    height: 400px;
+    transition: all 0.5s;
+    border-radius: 20px;
+    background: white;
+}
+.about > div:hover{
+    transform: scale(1.1);
+}
+.about ul{
+    margin-top:30px;
+    opacity: 0;
+    position: relative;
+    top:100px;
+}
+.about ul > li { 
+    text-align: left;
+    padding-left:30px;
+}
+.about > div > img{
+    width:100px;
+}    
+/*  --------------about end --------------------- */
+/*  ---------------skill-------------------------- */
+
+.skill > div:nth-child(1) > p{
+    padding: 50px 30px;
+    line-height:200%;
+    padding: 30px;
+    font-size:15px;
+    height: 300px;
+    
+}
+.skill_intro{
+    padding: 19px 0 30px 18%;
+    height: 300px;   
+}
+.percentBar{
+    border-radius:10px;
+    margin-top:10px;
+    height:15px;
+    background: white;
+    width:60%;
+    overflow: hidden;
+}
+.percent{
+    width:80%;
+    background: linear-gradient(#6755ca,#dfaee4);
+    height:15px;
+    border-radius:10px;
+}
+/*  ----------------skill end -------------------- */
+
+/*  ----------------produce----------------------- */
+#fullpage>section.profile .row{display: flex; align-items: center;}
+.produce{ 
+    overflow:visible !important; 
+}
+.produce p{
+    font-size:18px;
+    line-height: 200%;
+}
+.produce-left{
+    float:left;
+    text-align: right;
+    padding:0 30px;
+    width: 44.45%;
+}
+.produce-left > img{
+    border-radius: 100%;
+}
+.produce-right{
+    float:right; width: 51.75%; padding-right: 30px;
+}
+/*  ----------------produce end----------------------- */
+
+/*  ----------------work----------------------- */
+.fp-scroller{height: 100%;}
+.work .tit{
+    position: absolute; top: 0; left: 50%;
+    transform: translateX(-50%);
+}
+.swiper-wrap{    align-items: center;}
+.swiper-container {
+    max-width:90%;
+    min-width:375px;
+    padding: 50px;
+    height:auto;
+}
+
+.work .swiper-container{
+    height: 90%;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.swiper-slide {
+    box-shadow: grey 3px 3px 15px;
+   
+}
+
+.swiper-slide-wrap {
+    position: relative;
+    width:100%;
+}
+.work .swiper-slide-wrap{display: flex; height: 100%;}
+
+/* 버튼색 */
+.swiper-button-next, .swiper-button-prev{color: #000 !important;}
+.swiper-pagination-bullet-active{background-color: #000 !important;}
+
+/* .swiper-slide img {
+    width:50%;
+    vertical-align: top;
+} */
+
+.work .img{width: 50%; overflow: hidden; position: relative;}
+.work .img>img{
+    width: 100%;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.detail{ 
+    width: 50%;
+    float: right;
+    margin: 0 auto;
+    vertical-align: middle;
+    padding: 10% 5% 0;
+}
+.detail_btn{
+    margin-top:50px;
+    width:100%;
+    text-align: center;
+}
+.detail_btn > div{
+    display:block;
+    text-align: center;
+    height:30px;
+    line-height:30px;
+    color:white;
+    background:#2b2b2b;
+    box-shadow: 1px 1px 5px gray;
+    position: relative;
+    z-index: 3;
+    /* width:45%; */
+    width:100%;
+    display: inline-block;
+    border-radius:5px;
+}
+.detail_btn > div:nth-child(2){
+    display:block;
+    text-align: center;
+    height:30px;
+    line-height:30px;
+    color:white;
+    background:#929292;
+    box-shadow: 1px 1px 5px gray;
+    position: relative;
+    z-index: 3;
+    width:45%;
+    display: inline-block;
+    margin-left: 4%;
+    border-radius: 5px;
+}
+.detail_btn span {
+    position: relative;
+    z-index: 4;
+    color:white;
+}
+.detail_btn a{
+    display: block;
+    width: 100%;
+}
+.detail_btn a:after{
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:0%;
+    height:100%;
+    background:#0a7c00;
+    z-index: 2;
+    transition: 1s all;
+    border-radius: 5px;
+}
+.detail_btn>div:hover > a:after{
+    width:100%;
+}
+@keyframes jelly {
+	from {transform: scale(1, 1);}
+	30% {transform: scale(1.25, 0.75);}
+	40% {transform: scale(0.75, 1.25);}
+	50% {transform: scale(1.15, 0.85);}
+	65% {transform: scale(0.95, 1.05);}
+	75% {transform: scale(1.05, 0.95);}
+	to {transform: scale(1, 1);}
+}
+/* ----------------프로젝트 상세 페이지 ------------ */
+.modal_wrap{ 
+    display:none;
+}
+.detail_modal_bg{
+    position: fixed;
+    width: 100%;
+    height:100%;
+    background:rgba(0,0,0, 0.5);
+    z-index: 998;
+}
+.detail_modal_box{
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%,0);
+    position: fixed;
+    width: 30%;
+    min-width: 240px;
+    height: 90%;
+    z-index: 999;
+    box-shadow: 2px 1px 10px #6f6a6a;
+    overflow: auto;
+}
+.d1 , .d2 , .d3{display:none;}
+.detail_location_btn{
+    position: absolute;
+    bottom: 5%;
+    width: 47%;
+    min-width: 150px;
+    font-size: 15px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    box-shadow: 3px 1px 4px #bebebe;
+    background: #ff4161;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.single{
+    background: #929292 !important;
+}
+/* ----------------프로젝트 상세 페이지 end ------------ */
+/*  ----------------work end -------------------- */
+
+/*  ---------------contact ----------------------- */
+.contact_wrap > h2{ 
+    text-align: center;
+}
+.contact{
+    margin-bottom: 100px !important;
+}
+.contact-left *{
+    text-align: right;
+    line-height:200%;
+}
+.contact-left p{
+    font-size:18px;
+}
+.contact-right *{
+    font-size:18px;
+}
+.contact-right {
+    padding-top:7%;
+    padding-left:20px;
+}
+.contact-right > div { 
+    display:flex;
+    margin-bottom:10px;
+}
+.contact-right > div >  p {
+    margin-top: -5px;
+    margin-left:10px;
+} 
+.tit2{
+    font-size: 32px;
+    position: relative;
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+    color: #2e604c;
+}
+.jelly{
+    animation-name: jelly;
+    animation-duration: 2s;
+}
+/*  ----------------contact end -------------------- */
+
+/* Tablet Size: 1024 이하 */
+@media only screen and (max-width: 1023px) {
+    header > ul > li{display:none;}
+    header > ul {height:45px;}
+    .menu_btn{display:block; padding-right:10px;}
+   .introbox > p { 
+       font-size:16px;
+   }
+   .fp-scroller{height: auto;}
+   .tit , .tit2{ 
+       font-size:22px;
+   }
+   .produce p {
+    font-size:17px;
+    }
+    .produce-left{
+        margin-top:5%;
+    }
+    
+   .padding20{padding-right: 20px;}
+
+   .flex-wrapper {
+       width:80% !important;
+   }
+   .detail{
+    padding: 0% 6% 2%;
+   }
+   .about ul{
+     padding:5px;   
+    }
+    .detail_btn{
+        margin-top:30px;
+    }
+    .detail_modal_box{
+        width:50%;
+    }
+
+    .work .swiper-container{height: auto;}
+    .work .swiper-slide-wrap{
+        display: block;
+        height: auto;
+    }
+    .work .img{display: inline-block; position: initial;}
+    .work .img>img{position: initial; transform: translate(0);}
+}
+
+
+/* Mobile Size: 767px 이하 */
+@media handheld, only screen and (max-width: 767px) {
+    .introbox > div {width:275px;}
+    .introbox > div , .introbox > div *{    
+      font-size: 14px !important;
+    }
+    #fullpage>section.profile .row{display: block;}
+    .about > div >img{width: 70px;}
+    .about h2{font-size:18px;}
+    .about_box{ 
+         width: 300px;
+         margin: 0 auto;
+    }
+    .about_box ul,.about_box li{padding: left 0 !important;margin:0; font-size:12px;}
+    .about > div{margin-bottom:30px;}
+    .about > div{ 
+        text-align: center;
+        box-shadow: none;
+        padding: 5% 0 !important;
+        height:auto;
+        transition: all 0.5s;
+    }
+    .about > div:hover{
+        transform:none;
+    }
+    .percentage {
+        font-size:0.25em !important;
+    }
+    .flex-wrapper {
+        width:100% !important;
+    }
+    #margin20{margin-top:50px;}
+    .produce-left{text-align: center; margin-top:0;}
+    .tit2{
+        text-align: center;
+     }
+    .produce p {
+        font-size:14px;
+    }
+    .produce-left > img {
+        width:200px;
+    }
+
+    #fullpage > section:nth-child(4) .row{display: block;} /* skill 섹션 */
+    .contact{
+        margin-top:0px !important;
+        padding-left:30px !important;
+    }
+    .contact-left > p ,.contact-left > h2{
+        text-align: left;
+    } 
+    .contact-left > p{font-size: 12px;}
+    .swiper-container {
+        max-width: 100%;
+        min-width: 375px;
+        padding: 30px;
+        height: auto;
+    }
+    .detail{width:100%; padding:9% 7%; }
+    
+    .ocean{bottom: -30px !important; }
+    .work .swiper-slide-wrap{display: block;}
+    .work .tit{position: initial; transform: translate(0);}
+    .work .img {
+        width: 100%;
+    }
+    .work .swiper-container{position: initial;}
+    .swiper-container {
+        height:100%;
+        padding-top:10px;
+    }
+    
+.work .swiper-container{height: auto; transform: translate(0);}
+    .detail > p {margin: 0; font-size:12px; }
+    .detail_btn > a {margin-top:4%;}
+
+    .contact-left p{
+        font-size:15px;
+    }
+    .contact-right *{
+        font-size:15px;
+    }
+} 

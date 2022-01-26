@@ -355,11 +355,12 @@ footer{
 
 
 /*  반응형  */
-/* @media screen and (max-width:1600px){
-    header>h1.logo{width: 150px; height: 24px;}
-    header>nav.gnb{width: 600px;}
-    header>nav.gnb>ul>li>a, header>nav.gnb .submenu a{font-size: 14px;}
-} */
+@media screen and (max-width:1600px){
+    header>h1.logo{width: 180px; height: 26px;}
+    /* header>nav.gnb{width: 600px;} */
+    header>nav.gnb>ul{padding: 0; width: 700px; margin: 0 auto;}
+    header>nav.gnb>ul>li>a, header>nav.gnb .submenu a{font-size: 16px;}
+}
 
 @media screen and (max-width:1280px){
     header{height: 88px;}
@@ -392,6 +393,10 @@ footer{
 }
 
 @media screen and (max-width: 768px){
+    header.active{
+        background-color: rgba(0,0,0,0.8);
+        backdrop-filter: blur(5px);
+    }
     header, header>.MO_menu_wrap>.MO_head{height: 55px;}
     header>h1.logo, header>.MO_menu_wrap h1.logo{width: 140px; height: 20px; padding: 0 30px;}
     header>.MO_menu_btn, header>.MO_menu_wrap .close{padding-right: 30px;}

@@ -46,5 +46,14 @@ $(function(){
         $(this).parents('li').addClass('active').siblings().removeClass('active');
         $(this).css('color','#fff').parents('li').siblings().children('a').css('color','#777');
     });
-    
+
+    // 스크롤시 헤더 검정+블러(모바일전용)
+    $(window).on('scroll',function(){
+        if($(window).scrollTop()){
+            $('header').addClass('active');
+        }else{
+            $('header').removeClass('active');
+        }
+    });
+
 });

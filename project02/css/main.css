@@ -144,6 +144,8 @@
     width: 480px !important;
 }
 
+.mo-text{display: none;}
+
 
 /* 에이리스트 영역(section3) */
 .alist{
@@ -345,7 +347,7 @@
 
 
 /* 애니메이션 */
-.franchise .aniwrap .ani01{animation: ani01 60s linear infinite;}
+.franchise .aniwrap .ani01{animation: ani01 100s linear infinite;}
 @keyframes ani01 {
     0%{right: -6000px;}
     100%{right: 0%;}
@@ -379,6 +381,7 @@
     height: fit-content;
     transform: translateX(0%); transition: all 0.5s;
 }
+.news_notice .con-right ul{display: block;}
 .news_notice .con-right li{padding: 40px; border-bottom: 1px solid #eee;}
 .news_notice .con-right li>p{font-size: 18px;}
 .news_notice .con-right li>a{display: block;}
@@ -389,6 +392,7 @@
     font-size: 24px; font-weight: 600;
     margin-bottom: 15px;
 }
+.news_notice .btn-wrap{display: none;}
 
 
 /* 메인페이지 푸터영역 */
@@ -466,7 +470,7 @@
     .alist .contents-wrap>p:nth-child(4){font-size: 15px;}
 
     /* BRAND SUPPORT */
-    .brand .content{top: 77%;}
+    .brand .content{top: 77%; left: 10%;}
     .brand .content .con-box>.con_left{flex-basis: 400px;}
     .brand .content .con-box>.con_left>p{font-size: 14px;}
     .brand .content .con-box>.con_left>img{width: 350px;}
@@ -494,37 +498,92 @@
 }
 
 @media screen and (max-width: 768px){
-    /* .bodywrap{overflow-y: scroll;} */
+    .bodywrap>.mySwiper{height: auto !important;}
+    .bodywrap>.mySwiper.HT_100vh{height: 100vh !important;}
     .main-scroll-wrap{display: none;}
+    .bodywrap .section-wrap{height: auto !important; transform: translate3d(0px, 0px, 0px) !important;}
     .bodywrap section{height: auto !important; margin-bottom: 80px;}
-    .bodywrap section>div {
-        height: auto !important;
-    }
+    .bodywrap section>div{height: auto !important;}
 
     .contents-wrap{transform: translateY(0%); padding: 0 30px; width: auto;}
-    .contents-wrap h1{font-size: 32px;}
+    .contents-wrap h1{font-size: 32px; margin-bottom: 40px;}
     .contents-wrap h1:after{width: 8px; height: 8px;}
 
     /* section1 */
     .section1-slide .img-wrap a.slide01{background-image: url(../img/slide/slide01_mo.jpg);}
     .section1-slide .img-wrap a.slide02{background-image: url(../img/slide/slide02_mo.jpg);}
-    .section1-slide .btn-wrap{width: 200px !important; left: 50% !important; bottom: 30px !important;}
-
-    /* .bodywrap>.mySwiper{
-        height: 100% !important;
-    }
-    .bodywrap>.mySwiper>.section-wrap{
-        height: 100% !important;
-        /* display: block; */
-    /* } */
+    .section1-slide .btn-wrap{width: 200px !important; left: 50% !important; bottom: 20px !important;}
 
     /* MENU STORY */
     .menu-story .tab-menu li>a>strong{font-size: 16px;}
     .menu-story .tab-menu li>a>span{display: none;}
     .menu-story .tab-content{position: relative; top: 0; left: 0; transform: translateY(0%);}
-    .menu-story .tab-menu{width: 100%;}
+    .menu-story .tab-menu{width: 100%; margin-bottom: 50px;}
     .menu-story .tab-menu>ul{display: flex; justify-content: space-between;}
     .menu-story .tab-menu li{margin: 0;}
     .menu-story .swiper-slide-active{width: 100% !important;}
-    section.mainSlide .btn-wrap{width: 100%; left: 0; bottom: 50px;}
+    section.mainSlide .btn-wrap{width: 100%; left: 0; bottom: 40px;}
+    .mo-text {display: block; text-align: center; padding: 20px; background: #efefef;}
+    .mo-text>span{display: block; font-size: 12px; color: #777; margin-bottom: 10px;}
+    .mo-text>strong {font-size: 16px; font-weight: 800; color: #444;}
+
+    /* 에이리스트 */
+    .alist {background: url(../img/alist/alist_mo.jpg) no-repeat; background-size: auto 100%; background-position: center bottom;}
+    .alist .contents-wrap{margin-top: 80px;}
+    .alist .contents-wrap>p:nth-child(3){font-size: 16px}
+    .alist .contents-wrap>p:nth-child(4){margin-bottom: 50%; width: 100%; font-size: 14px}
+
+    /* BRAND SUPPORT */
+    /* .brand .btn-wrap{top: 373px;} */
+    .brand .contents-wrap h1{transform: translateY(0); margin-bottom: 0; transform: translateY(15px);}
+    .brand .content{top: 0; left: 0; width: 100%; position: relative; transform: translateY(0);}
+    .brand .content .con-box{display: block;}
+    .brand .content .con-box>.con_left{display: block;}
+    .brand .content .con-box>.con_left>p{display: none;}
+    .brand .content .con-box>.con_left>img{width: 100%;}
+    .brand .content>.infoSwiper03>.swiper-wrapper{align-items: flex-start;}
+    .brand .content .con_right{display: flex; flex-wrap: wrap; margin: 0; margin-top: 25px; padding: 5px;}
+    .brand .content .con_right>.icon{width: 40px; height: 40px; margin: 0; margin-right: 20px;}
+    .brand .content .con_right a{margin-bottom: 0;}
+    .brand .content .con_right p{flex: none; width: 100%; margin-top: 15px;}
+
+    /* FRANCHISE */
+    /* 애니메이션 */
+    .franchise>.contents-wrap{padding: 100px 0;}
+    .franchise .txtwrap{position: relative; top: 0; left: 0; transform: translate(0);}
+    .franchise .aniwrap{position: absolute; top: 0; left: 0;}
+    .franchise .aniwrap .itembox{width: 3000px;}
+    .franchise .aniwrap .ani01{animation: ani01 120s linear infinite;}
+    @keyframes ani01 {
+        0%{right: -3000px;}
+        100%{right: 0%;}
+    }
+
+    /* NEWS &NOTICE */
+    .news_notice .image{display: none;}
+    .news_notice .contents-wrap{display: block; width: auto; margin: 0;}
+    .news_notice .contents-wrap h1{margin-bottom: 40px;}
+    .news_notice .navi{margin-bottom: 35px;}
+    .news_notice .con-right{width: 100%; height: 220px; border: solid 2px #333; box-sizing: border-box; position: relative;}
+    .news_notice .con-right>div{height: 100%; padding: 30px; box-sizing: border-box;}
+    .news_notice .con-right ul{display: flex;}
+    .news_notice .con-right li{
+        padding: 0;
+        border: 0;}
+    .news_notice .navi>a{font-size: 16px;}
+    .news_notice .con-right li>a>p{font-size: 12px; margin-bottom: 20px;}
+    .news_notice .con-right li>a>h5{font-size: 18px; margin-bottom: 20px;}
+    .news_notice .con-right li>a>p:last-child{font-size: 12px;}
+    .news_notice .btn-wrap{
+        display: block;
+        height: 50px !important;
+        position: absolute;
+        left: 0;
+        bottom: 0 !important;
+        transform: translateX(0) !important;
+        background: #333;
+    }
+
+    /* footer */
+    #main_footer{margin-top: 80px;}
 }
