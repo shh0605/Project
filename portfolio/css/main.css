@@ -34,11 +34,12 @@ header{overflow:hidden;position:relative;}
 header > ul{
     display: flex;
     justify-content: center;
-    background: rgba(0,0,0, 0.5);
+    /* background: rgba(0,0,0, 0.5); */
     padding: 10px 0;
     width: 100%;
     position: fixed;
     z-index: 1;
+    transition: all 0.5s;
 }
 header > ul > li{margin:0 20px; z-index: 100;}
 header > ul > li > a{color:white;}
@@ -47,6 +48,7 @@ header > ul > li > a{color:white;}
     font-size:25px;
     position:absolute;
     right:3%;
+    cursor: pointer;
 }
 .menu_btn{
     display:none;
@@ -55,8 +57,8 @@ section{position:relative;}
 #fullpage > section:nth-child(1){background: url(../img/sky.jpg) 0% 0% / cover !important;}
 /* #fullpage > section:nth-child(1){background: url(../img/sky_bg5.jpg) 0% 10% / cover !important;} */
 #fullpage > section:nth-child(2){background: url(../img/section_bg2.jpg) 0% 0% / cover !important; margin-top: 10px; box-sizing: border-box;}
-/* #fullpage > section:nth-child(3){background: url(../img/section_bg3.jpg) 0% 0% / cover !important;}
-#fullpage > section:nth-child(4){background: url(../img/section_bg4.jpg) 0% 0% / cover !important;} */
+/* #fullpage > section:nth-child(3){background: url(../img/section_bg3.jpg) 0% 0% / cover !important;} */
+/* #fullpage > section:nth-child(4){background: url(../img/section_bg4.jpg) 0% 0% / cover !important;} */
 
 #fullpage > section:nth-child(1) .fp-tableCell{padding: 0;}
 
@@ -137,7 +139,9 @@ section{position:relative;}
     text-align:center;
     position:relative;
 }
+
 /*  ---------------about--------------------- */
+.about_wrap{background-color: #f8f8f8 !important;}
 .about{
     margin-top:40px !important;
 }
@@ -216,7 +220,7 @@ section{position:relative;}
     width: 44.45%;
 }
 .produce-left > img{
-    border-radius: 100%;
+    /* border-radius: 100%; */
 }
 .produce-right{
     float:right; width: 51.75%; padding-right: 30px;
@@ -426,9 +430,20 @@ section{position:relative;}
 .tit2{
     font-size: 32px;
     position: relative;
-    font-family: 'Fredoka One', cursive;
-    font-weight: normal;
-    color: #2e604c;
+    /* font-family: 'Fredoka One', cursive; */
+    /* font-weight: normal; */
+    /* color: #2e604c; */
+    display: inline-block;
+}
+h2.tit2:after {
+    content: '';
+    display: block;
+    height: 30%;
+    width: 100%;
+    background: rgba(0,0,0,0.1);
+    position: absolute;
+    bottom: 6%;
+    left: 0;
 }
 .jelly{
     animation-name: jelly;

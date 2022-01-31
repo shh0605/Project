@@ -139,42 +139,6 @@ $(function(){
             'transform': 'translateX(-100%)'
         });
     });
-
-
-
-    // var Tx, Tleft, Tdown;
-
-    // // ** 터치 이벤트 **
-    // $(".bodywrap").on('touchstart', function(e){   // 손가락이 닿은 상태
-    //     // e.preventDefault();   // a링크 넘어가는거 막기
-    //     Tdown = true;
-    //     // Tx = e.touches[0].pageX;  // 터치한 X축 좌표
-    //     Tx = e.touches[0].pageY;  // 터치한 X축 좌표
-    //     // Tleft = $(".tab_manu").scrollLeft();
-    //     Tleft = $(".bodywrap").scrollTop();
-    // });
-
-    // $("body").on('touchmove', function(e){  //  손가락이 움직이는지 확인
-    //     if(Tdown){
-    //     // var newTX = e.pageX;
-    //     // left = $(this).scrollLeft();
-    //     // var newTX = e.touches[0].pageX;
-    //     var newTX = e.touches[0].pageY;
-    //     // $(".tab_manu").scrollLeft(Tleft - newTX + Tx);
-    //     $(".bodywrap").scrollTop(Tleft - newTX + Tx);
-    //     }
-    // });
-
-    // $("body").on('touchend', function(e){
-    //     Tdown = false;
-    // });
-
-    // if($('.mySwiper').scrollTop()){
-    //     $('header').addClass('active');
-    // }else{
-    //     $('header').removeClass('active');
-    // }
-    // console.log( $('.section-wrap').scrollTop() )
     
 });
 

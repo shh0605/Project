@@ -745,7 +745,9 @@
                     if( $(window).width() <= 768 ){
                         // alert('mo_768');
                         $('.bodywrap>.mySwiper').addClass('HT_100vh');
-                    }else{$('.bodywrap>.mySwiper').removeClass('HT_100vh');}
+                    }else{
+                        $('.bodywrap>.mySwiper').removeClass('HT_100vh');
+                    }
                 }
                 HT_100vh();
             }
@@ -818,7 +820,7 @@
         var swiper = new Swiper(".infoSwiper04", {
             slidesPerView: 1,
             spaceBetween: 30,
-            loop: true,
+            loop: false,
             pagination: {
             el: ".swiper-pagination",
             type: "fraction",
@@ -830,7 +832,6 @@
             breakpoints: {
                 // 768px 보다 클 경우
                 768: {
-                    loop: false,
                     allowTouchMove : false, //드래그 금지
                 }
             },

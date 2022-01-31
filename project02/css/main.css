@@ -436,6 +436,13 @@
 
 
 /* 반응형 */
+
+@media screen and (min-width:769px){
+    /* 브랜드 및 공지사항 스와이프 문제 */
+    .brand .btn-wrap{top: auto !important;}
+    .news_notice .con-right ul{transform: translate(0) !important;}
+}
+
 @media screen and (max-width:1280px){
     /* BRAND SUPPORT */
     .brand .content .con-box>.con_left{flex-basis: 500px;}

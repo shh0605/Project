@@ -11,6 +11,9 @@
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="js/jquery.fullPage.js"></script>
     <script src="js/scrolloverflow.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/intro_text_effect.js"></script>  <!-- 표지 텍스트 -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/jquery.fullPage.css">
     <link rel="stylesheet" href="css/master.css">
@@ -24,26 +27,15 @@
 </head>
 
 <body>
-    <!-----------------로딩페이지 ----------------- -->
+    <!-- 로딩페이지 -->
     <div class="loading_wrap">
-
         <div class="rect rect1"></div>
         <div class="rect rect2"></div>
         <div class="rect rect3"></div>
         <div class="rect rect4"></div>
         <p class="loading_text">※ 이 페이지는 크롬에 최적화 되어있는 페이지입니다.</p>
-
     </div>
 
-    <script>
-        $(document).ready(function () {
-            $(".loading_wrap").delay(2000).fadeOut();
-            $(".introbox > div").delay(1800).css("display", "block");
-        });
-    </script>
-
-    <!-----------------로딩페이지----------------- -->
-    
     <div id="slide_menu">
         <ul>
             <li class="section1" data-anchor="Home"><a href="#Home">Home</a></li>
@@ -56,6 +48,7 @@
         <p> ※ 이 페이지는 크롬 브라우저에 최적화 되어있는 페이지 입니다.</p>
     </div>
     <div id="slide_menu_bg"></div>
+
     <header>
         <ul>
             <li class="section1" data-anchor="Home"><a href="#Home">Home</a></li>
@@ -69,19 +62,10 @@
             </div>
         </ul>
     </header>
-    <script>
-        //슬라이드 메뉴 스크립트
-        $("#slide_menu_bg").click(function () {
-            $(this).css("display", "none");
-            $("#slide_menu").css("right", "-100%");
-        });
 
-        $(".menu_btn i").click(function () {
-            $("#slide_menu_bg").css("display", "block");
-            $("#slide_menu").css("right", "0");
-        });
-    </script>
     <div id="fullpage">
+
+        <!-- Home(표지) -->
         <section class="section">
             <!-- <div id="particles-js"></div> -->
             <div class="cloudbox">
@@ -95,24 +79,11 @@
                 <!-- <img src="img/cloud/cloud3.png" style="--i:3;" alt="구름3"> -->
                 <!-- <img src="img/cloud/cloud4.png" style="--i:4;" alt="구름4"> -->
             </div>
-            <script>
-                //텍스트 효과
-                var app = document.getElementById('main_text');
-                var $r1_text = $("#main_text").text();
-
-                var typewriter = new Typewriter(app, {
-                    loop: true
-                });
-
-                typewriter.typeString($r1_text)
-                    .pauseFor(2500)
-                    .deleteAll()
-                    .start();
-            </script>
             <!-- <script src="js/particles.js"></script> -->
             <!-- <script src="js/app.js"></script> -->
-            <script src="js/intro_text_effect.js"></script>
         </section>
+
+        <!-- profile -->
         <section class="section profile">
             <div class="produce row">
                 <div class="produce-left col-5">
@@ -131,6 +102,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- about섹션 -->
         <section class="section about_wrap">
             <h2 class='tit'>about</h2>
             <div class="row about" id="about">
@@ -168,22 +141,21 @@
                         </ul>
                     </div>
                 </div>
-                <script>
-                    //scroll 시 fadein
-                    var barThis = $(".about_wrap").offset();</script>
             </div>
         </section>
+
+        <!-- Skill섹션 -->
         <section class="section page">
             <div class="row skill">
                 <div class="col-12 last">
                     <h2 class="tit">Skill</h2>
                     <div class="flex-wrapper" id="margin20">
                         <div class="single-chart">
-                            <svg viewBox="0 0 36 36" class="circular-chart orange">
+                            <svg viewBox="0 0 36 36" class="circular-chart html">
                                 <path class="circle-bg" d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle" stroke-dasharray="95, 100" d="M18 2.0845
+                                <path class="circle" stroke-dasharray="93, 100" d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831" />
                                 <text x="18" y="20.35" class="percentage">HTML</text>
@@ -192,7 +164,7 @@
                         </div>
 
                         <div class="single-chart">
-                            <svg viewBox="0 0 36 36" class="circular-chart green">
+                            <svg viewBox="0 0 36 36" class="circular-chart css">
                                 <path class="circle-bg" d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831" />
@@ -205,7 +177,7 @@
                         </div>
 
                         <div class="single-chart">
-                            <svg viewBox="0 0 36 36" class="circular-chart blue">
+                            <svg viewBox="0 0 36 36" class="circular-chart js">
                                 <path class="circle-bg" d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831" />
@@ -220,7 +192,7 @@
 
                     <div class="flex-wrapper">
                         <div class="single-chart">
-                            <svg viewBox="0 0 36 36" class="circular-chart yellow">
+                            <svg viewBox="0 0 36 36" class="circular-chart PsAi">
                                 <path class="circle-bg" d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831" />
@@ -232,7 +204,7 @@
                             <p class="circle_percent">90%</p>
                         </div>
                         <div class="single-chart">
-                            <svg viewBox="0 0 36 36" class="circular-chart red">
+                            <svg viewBox="0 0 36 36" class="circular-chart git">
                                 <path class="circle-bg" d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831" />
@@ -244,7 +216,7 @@
                             <p class="circle_percent">65%</p>
                         </div>
                         <div class="single-chart">
-                            <svg viewBox="0 0 36 36" class="circular-chart purple">
+                            <svg viewBox="0 0 36 36" class="circular-chart oa">
                                 <path class="circle-bg" d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831" />
@@ -259,37 +231,14 @@
                 </div>
             </div>
         </section>
-        <!-- <section class="section">
-            <div class="produce row">
-                <div class="produce-left col-5">
-                    <img src="img/me_.png" alt="내사진">
-                </div>
-                <div class="produce-right col-7 last">
-                    <h2 class="tit2">Hello!</h2>
-                    <p>
-                        안녕하세요 <span class="bold">손정빈</span>이라고 합니다.<br>
-                        저는 생각한것을 만들어가는 과정이 좋습니다.<br>
-                        웹을 제작하는 일은 시간이 지날수록 트렌드는 변하고 계속 새로운 기술이 나오면서
-                        항상 멈추지 않고 끈임없이 배울려는 마음가짐으로 배워가며 작업을 해야합니다.<br>
-                        하지만 제작 과정 끝에 사용자에 편의를 위한다는 본질은 변하지 않는다고 생각합니다.<br>
-                        <span class="bold"> 본질을 이해하고 직관적으로 메시지를 전달할 수 있는 퍼블리셔</span>가 되고 싶습니다.
-                    </p>
-                </div>
-            </div>
-        </section> -->
 
-
-
-        <!-- -----------------------SWIPER----------------------->
-
+        <!-- Work섹션 -->
         <section class="section work">
-            <!-- Swiper -->
             <h2 class="tit">Work</h2>
             <div class="swiper-container mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="swiper-slide-wrap">
-                            <!-- <img src="img/project3-intro.jpg" /> -->
                             <div class="img">
                                 <img src="img/project01.jpg" />
                             </div>
@@ -299,7 +248,8 @@
                                 <p>
                                     <span class='bold'>(Single Page)</span><br>
                                     퍼블리싱 100% <br>
-                                    반응형으로 제작하였습니다.
+                                    한페이지씩 넘어가는 메인페이지를 반응형으로 제작하였습니다.
+                                    모바일버전에서는 일반 스크롤로 전환되어 유연성을 높였습니다.
                                 </p>
                                 <div class="detail_btn">
                                     <div><a href="http://shh0605.dothome.co.kr/project/project02/index.html"
@@ -321,8 +271,8 @@
                                 <p>
                                     <span class='bold'>(full Page)</span><br>
                                     퍼블리싱 100%<br>
-                                    메인페이지, 선글라스, 상세페이지, 매장보기, 로그인페이지
-                                    를 반응형으로 제작하였습니다.
+                                    메인페이지와 서브페이지4개(선글라스, 상세페이지, 매장보기, 로그인)를 반응형으로 제작하였습니다. <br>
+                                    선글라스 페이지에서는 무한스크롤 대신 더보기 버튼으로 상품을 10개씩 추가로 볼 수 있도록 기능을 추가하였습니다.
                                 </p>
                                 <div class="detail_btn">
                                     <div><a href="http://shh0605.dothome.co.kr/project/project01/index.html"
@@ -332,66 +282,59 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img">
+                                <img src="img/project03.jpg" />
+                            </div>
+                            
+                            <div class="detail">
+                                <p><span class="bold">프로젝트명</span> : 스티커메모</p>
+                                <p><span class="bold">사용언어</span> : HTML,CSS,JS</p>
+                                <p>
+                                    <span class='bold'>(Single Page)</span><br>
+                                    퍼블리싱 100%<br>
+                                    데이터를 브라우저에 저장할 수 있는 localStorage를 이용하여 메모장의 내용을 저장·불러오기·삭제가 가능하도록 하였습니다.<br>
+                                    또한 원하는 만큼 메모장을 추가하고 닫을 수 있으며, 드래그 앤 드롭 기능으로 위치 이동이 가능합니다.
+                                </p>
+                                <div class="detail_btn">
+                                    <div><a href="http://shh0605.dothome.co.kr/project/02_memo/index.html"
+                                            target="_blank"><span>사이트로 이동</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img">
+                                <img src="img/project04.jpg" />
+                            </div>
+                            
+                            <div class="detail">
+                                <p><span class="bold">프로젝트명</span> : 영화소개</p>
+                                <p><span class="bold">사용언어</span> : HTML,CSS,JS</p>
+                                <p>
+                                    <span class='bold'>(Single Page)</span><br>
+                                    퍼블리싱 100%<br>
+                                    전체적으로 무채색을 이용하여 깔끔하게 디자인 하였고, 애니메이션과 트랜스폼 기능으로 화려하게 제작하였습니다.
+                                </p>
+                                <div class="detail_btn">
+                                    <div><a href="http://shh0605.dothome.co.kr/project/01_movie/index.html"
+                                            target="_blank"><span>사이트로 이동</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
-
-                <!-- detail modal JS -->
-                <script>
-                    var modal_start_btn = $(".detail_btn1")
-                    var modal_bg = $(".detail_modal_bg");
-                    modal_start_btn.click(function (e) {
-                        e.preventDefault();
-                        var $this_data = $(this).attr("data");
-                        $(".modal_wrap").css("display", "block");
-
-                        console.log($this_data);
-                        if ($this_data == "d1") {
-                            $(".d1").css("display", "block");
-                        }
-                        if ($this_data === "d2") {
-                            $(".d2").css("display", "block");
-                        }
-
-                        if ($this_data === "d3") {
-                            $(".d3").css("display", "block");
-                        }
-                    });
-
-                    modal_bg.click(function () {
-                        $(".d1").css("display", "none");
-                        $(".d2").css("display", "none");
-                        $(".d3").css("display", "none")
-                        $(".modal_wrap").css("display", "none");
-                    });
-
-                    //------- img src , a href 스크립트 제어  ---------
-
-
-                    //------------img src , a href 스크립트 제어 end -----------
-                </script>
             </div>
-            <!-- Swiper JS -->
-            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-            <!-- Initialize Swiper -->
-            <script>
-                var swiper = new Swiper(".mySwiper", {
-                    effect: "flip",
-                    grabCursor: true,
-                    pagination: {
-                        el: ".swiper-pagination",
-                    },
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                });
-            </script>
         </section>
-        <!-- -----------------------SWIPER END----------------------->
+
+        <!-- Contact섹션 -->
         <section class="section" style="position: relative;">
             <h2 class="tit">Contact</h2>
             <div class="contact row">
@@ -421,13 +364,15 @@
             </div>
             <div class="ocean">
                 <div class="wave"></div>
-                <!-- <div class="wave"></div> -->
+                <div class="wave"></div>
+                <div class="wave"></div>
             </div>
         </section>
 
     </div>
 
     <script>
+        // fullpage 플러그인
         $(function () {
             $('#fullpage').fullpage({
                 autoScrolling: true,
@@ -444,6 +389,10 @@
                         setTimeout(() => {
                             effect(effect_box, 50)
                         }, 2300);
+
+                        $('header > ul').css({'background': 'none'});
+                    }else{
+                        $('header > ul').css({'background': 'rgba(0,0,0, 0.7)'});
                     }
                     //about
                     if (index == 3) {
@@ -472,6 +421,19 @@
                     }
                 }
             });
+        });
+
+        // Work섹션 swiper
+        var swiper = new Swiper(".mySwiper", {
+            effect: "flip",
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
     </script>
 </body>

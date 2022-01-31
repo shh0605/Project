@@ -22,9 +22,11 @@
   }
   
   .circle-bg {
-    fill: white;
-    stroke: white;
+    /* fill: white;
+    stroke: white; */
     stroke-width: 3.8;
+    fill: none;
+    stroke: #eee;
   }
   
   .circle {
@@ -41,27 +43,33 @@
     }
   }
   
-  .circular-chart.orange .circle {
-    stroke: #ff9f00;
+  .circular-chart.html .circle {
+    /* stroke: #ff9f00; */
+    stroke: #f89520;
   }
   
-  .circular-chart.green .circle {
-    stroke: #4CC790;
+  .circular-chart.css .circle {
+    /* stroke: #4CC790; */
+    stroke: #339dc2;
   }
   
-  .circular-chart.blue .circle {
-    stroke: #3c9ee5;
+  .circular-chart.js .circle {
+    /* stroke: #3c9ee5; */
+    stroke: #e5c745;
   }
-  .circular-chart.red .circle {
-    stroke: #c73323;
-  }
-  
-  .circular-chart.yellow .circle {
-    stroke: #d1b32c;
+  .circular-chart.PsAi .circle {
+    /* stroke: #c73323; */
+    stroke: #92c267;
   }
   
-  .circular-chart.purple .circle {
-    stroke: #8a3e71;
+  .circular-chart.git .circle {
+    /* stroke: #d1b32c; */
+    stroke: #7e72af;
+  }
+  
+  .circular-chart.oa .circle {
+    /* stroke: #8a3e71; */
+    stroke: #c35c6f;
   }
   
   .percentage {
